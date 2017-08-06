@@ -114,8 +114,8 @@ $showTOC = ($ACT == "show") && tpl_toc(true);
 				<div class="row">
         			<div class="col-md-11 text-muted text-right">
 						<?php tpl_flush(); ?>
-            	  		<?php tpl_pageinfo() /* 'Last modified' etc */ ?>
-              			<?php tpl_license('button') /* content license, parameters: img=*badge|button|0, imgonly=*0|1, return=*0|1 */ ?>
+            	  		<!--<?php tpl_pageinfo() /* 'Last modified' etc */ ?>
+              			<?php tpl_license('button') /* content license, parameters: img=*badge|button|0, imgonly=*0|1, return=*0|1 */ ?> -->
 	     	       	  	<?php tpl_includeFile('footer.html') ?>
     	    		</div>
 				</div>
