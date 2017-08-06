@@ -29,7 +29,7 @@ Do something like the following:
 3. ```mkdir dokubootstrapsimplified```
 4. ```cd dokubootstrapsimplified```
 5. ```git init```
-6. ```git pull https://github.com/badeendjuh/dokubootstrap-simplified.git```
+6. ```git pull https://github.com/LiamLombard/dokubootstrap-simplified.git```
 7. Using DokuWiki's admin interface, change the wiki's template to
    dokubootstrap-simplified.
 
