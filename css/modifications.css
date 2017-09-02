@@ -3,6 +3,13 @@ body {
     padding-bottom: 40px;
 }
 
+.navbar
+{
+  background-color: #008cba;
+  border-color: #ff8300;
+  border-bottom: 2px solid #ff8300;
+}
+
 /* offset h1 targets with top navbar so that navigation anchor links line up */
 .page h1, .page h2, .page h3, .page h4, .page h5 {
 	padding-top: 72px;
@@ -40,7 +47,7 @@ body {
 
 /* All levels of nav */
 .bs-sidebar .nav > li > a {
-  display: block; 
+  display: block;
   padding: 5px 20px;
 }
 
