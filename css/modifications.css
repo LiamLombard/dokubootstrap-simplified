@@ -16,6 +16,7 @@ body {
 
 .breadcrumb {
   margin-top: 5px;
+  margin-bottom: 0px;
 }
 
 /* Give the side TOC some space between top bar */
