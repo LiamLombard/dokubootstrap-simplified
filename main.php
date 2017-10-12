@@ -77,13 +77,15 @@ $showTOC = ($ACT == "show") && tpl_toc(true);
            	</div> <!-- container -->
 		</nav> <!-- navbar -->
 
-    <?php require_once('tpl_breadcrumbs.php'); ?>
 
 	    <?php html_msgarea() /* occasional error and info messages on top of the page */ ?>
     	<?php tpl_includeFile('header.html') ?>
 
         <div class="container">
         <!-- ********** SIDE BAR for TOCIFY ********** -->
+        <div class="row">
+          <?php require_once('tpl_breadcrumbs.php'); ?>
+        </div>
         	<div class="row">
 
 
