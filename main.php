@@ -33,7 +33,7 @@ $showTOC = ($ACT == "show") && tpl_toc(true);
     <link href="<?php echo tpl_getMediaFile(array("css/modifications.css")); ?>" rel="stylesheet">
     <script src="<?php echo tpl_getMediaFile(array("js/bootstrap.min.js")); ?>"></script>
 	<script src="<?php echo tpl_getMediaFile(array("js/modifications.js")); ?>"></script>
-	
+
 </head>
 
 <body>
@@ -41,10 +41,10 @@ $showTOC = ($ACT == "show") && tpl_toc(true);
              precede CSS rules by #IE6 for IE6, #IE7 for IE7 and #IE8 for IE8 (div closes at the bottom) */ ?>
     <!--[if IE 6 ]><div id="IE6"><![endif]--><!--[if IE 7 ]><div id="IE7"><![endif]--><!--[if IE 8 ]><div id="IE8"><![endif]-->
 
-    <?php 
-	/* 	The "dokuwiki__top" id is needed somewhere at the top, because that's where the "back to top" button/link links to 
+    <?php
+	/* 	The "dokuwiki__top" id is needed somewhere at the top, because that's where the "back to top" button/link links to
     	classes mode_<action> are added to make it possible to e.g. style a page differently if it's in edit mode,
-        See http://www.dokuwiki.org/devel:action_modes for a list of action modes 
+        See http://www.dokuwiki.org/devel:action_modes for a list of action modes
      	.dokuwiki should always be in one of the surrounding elements (e.g. plugins and templates depend on it) */ ?>
 	<div id="dokuwiki__site">
 		<div id="dokuwiki__top" class="dokuwiki site mode_<?php echo $ACT ?>"></div>
@@ -77,19 +77,21 @@ $showTOC = ($ACT == "show") && tpl_toc(true);
            	</div> <!-- container -->
 		</nav> <!-- navbar -->
 
+    <?php require_once('tpl_breadcrumbs.php'); ?>
+
 	    <?php html_msgarea() /* occasional error and info messages on top of the page */ ?>
     	<?php tpl_includeFile('header.html') ?>
 
         <div class="container">
         <!-- ********** SIDE BAR for TOCIFY ********** -->
         	<div class="row">
-				
-				
-				<?php /* when in Show Mode we render the TOC, if not, use full width for content */ 
+
+
+				<?php /* when in Show Mode we render the TOC, if not, use full width for content */
 				if ($showTOC) { ?>
 					<!-- Make side bar 3 "md's" wide -->
             		<div class="col-md-3">
-             			<?php _tpl_toc_to_twitter_bootstrap(); ?> 
+             			<?php _tpl_toc_to_twitter_bootstrap(); ?>
            			</div>
            			<div class="col-md-8" id="dokuwiki__content">
 				<?php } else { ?>
