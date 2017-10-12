@@ -12,11 +12,12 @@ body {
 
 /* offset h1 targets with top navbar so that navigation anchor links line up */
 .page h1, .page h2, .page h3, .page h4, .page h5 {
+  margin-top: -0.1em;
 }
 
 .breadcrumb {
   margin-top: 5px;
-  margin-bottom: 15px;
+  margin-bottom: 0px;
 }
 
 /* Give the side TOC some space between top bar */
