@@ -55,7 +55,7 @@ function _tpl_action($type, $link=0, $wrapper=0) {
 
 function _tpl_toc_to_twitter_bootstrap_event_hander_dump_level($data, $firstlevel=false) {
 
-		
+
     if (count($data) == 0) {
         return '';
     }
@@ -73,7 +73,7 @@ function _tpl_toc_to_twitter_bootstrap_event_hander_dump_level($data, $firstleve
 
 		// link or reference?
 		isset($heading['hid']) ? $href = '#'.$heading['hid'] : $href = $heading['link'];
-		
+
 		if ($heading['level'] == $level) {
 
 			// Close previous open li.
@@ -83,7 +83,7 @@ function _tpl_toc_to_twitter_bootstrap_event_hander_dump_level($data, $firstleve
 			}else{
 				 $out .= '';
 			}
-			
+
         	$out .= '<li><a href="' . $href . '">'. $heading['title'] . '</a>';
         	$li_open = true;
 
@@ -91,9 +91,9 @@ function _tpl_toc_to_twitter_bootstrap_event_hander_dump_level($data, $firstleve
         	$out .= '<ul class="nav">';
 			$out .= '<li><a href="' . $href . '">'. $heading['title'] . '</a>';
 			$li_open = true;
-		
+
 		}else if($heading['level'] < $level) {
-			
+
 			// Close previous open li.
 			if($li_open) {
 				 $out .= '</li>';
@@ -101,14 +101,14 @@ function _tpl_toc_to_twitter_bootstrap_event_hander_dump_level($data, $firstleve
 			}else{
 				 $out .= '';
 			}
-	        	
+
 			$out .= '</ul>';
 			$out .= '<li><a href="' . $href . '">'. $heading['title'] . '</a>';
 		}
-		
+
 		$level = $heading['level'];
     }
-	
+
 	// Close previous open li.
     if($li_open) {
     	$out .= '</li>';
@@ -132,7 +132,7 @@ function _tpl_toc_to_twitter_bootstrap()
     //Force generation of TOC, request that the TOC is returned as HTML, but then ignore the returned string. The hook will instead dump out the TOC.
     global $EVENT_HANDLER;
 	$EVENT_HANDLER->register_hook('TPL_TOC_RENDER', 'AFTER', NULL, '_tpl_toc_to_twitter_bootstrap_event_hander');
-    
+
 	tpl_toc(true);
 }
 
@@ -149,12 +149,12 @@ function _tpl_output_page_tools($showTools = true, $element = 'li'){
             tpl_action('backlink', 1, $element);
             tpl_action('subscribe', 1, $element);
             tpl_action('revert', $textonly, $element);
-			
+
 			echo '<li class="divider"></li>';
         	tpl_action('recent', 1, 'li');
         	tpl_action('media', 1, 'li');
         	tpl_action('index', 1, 'li');
-	
+
 			echo '</ul>';
     }
 }
@@ -188,7 +188,7 @@ function _tpl_output_search_bar()
 /**
  * Define how the user related content is shown.
  * When not logged in, login / register is shown
- * When logged in the user's name is printed with a dropdown of user related options 
+ * When logged in the user's name is printed with a dropdown of user related options
  *
  * @author Paul in 't Hout <badeendjuh@email.com>
  **/
@@ -220,5 +220,23 @@ function dw($message) {
         print "<pre>";
 }
 
-
-
+function bootstrap3_breadcrumbs() {
+  global $lang;
+  global $conf;
+  //check if enabled
+  if(!$conf['breadcrumbs']) return false;
+  $crumbs = breadcrumbs(); //setup crumb trace
+  //render crumbs, highlight the last one
+  print '<ol class="breadcrumb">';
+  print '<li>' . rtrim($lang['breadcrumb'], ':') . '</li>';
+  $last = count($crumbs);
+  $i    = 0;
+  foreach($crumbs as $id => $name) {
+    $i++;
+    print ($i == $last) ? '<li class="active">' : '<li>';
+    tpl_link(wl($id), hsc($name), 'title="'.$id.'"');
+    print '</li>';
+    if($i == $last) print '</ol>';
+  }
+  return true;
+}
