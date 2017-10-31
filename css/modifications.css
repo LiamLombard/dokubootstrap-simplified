@@ -99,3 +99,28 @@ body {
 .text-right {
 	text-align: right;
 }
+
+#dokuwiki__content {
+  width: 100%;
+}
+
+#wiki__text {
+  width: 100%;
+  background-color: white;
+  color: black;
+  border-style:solid;
+  border-color: grey;
+  border-width: 1px;
+}
+
+.toolbar {
+  
+}
+
+.toolbutton {
+  background-color: white;
+  border: grey 1px solid;
+  margin: 2px;
+  width: 5.2%;
+}
+
