@@ -100,10 +100,6 @@ body {
 	text-align: right;
 }
 
-#dokuwiki__content {
-  width: 100%;
-}
-
 #wiki__text {
   width: 100%;
   background-color: white;
@@ -113,14 +109,9 @@ body {
   border-width: 1px;
 }
 
-.toolbar {
-  
-}
-
 .toolbutton {
   background-color: white;
   border: grey 1px solid;
   margin: 2px;
-  width: 5.2%;
 }
 
